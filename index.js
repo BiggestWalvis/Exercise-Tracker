@@ -126,7 +126,7 @@ app.get("/api/users/:_id/logs", async (req, res) => {
     user_id: id
   }
   if(from || to){
-    filter.date=dateObj;
+    filter.date = dateObj;
   }
 
   //search through the database and respond with a log of exercises based off of the user id
@@ -135,7 +135,7 @@ app.get("/api/users/:_id/logs", async (req, res) => {
   const log = excersises.map(e => ({
     description: e.description,
     duration: e.duration,
-    date: e.date.toDateString
+    date: e.date.toDateString()
   }))
 
   res.json({
